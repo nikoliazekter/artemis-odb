@@ -52,7 +52,6 @@ public class WireTest {
 		
 		world.process();
 	}
-	
 	@Test
 	public void systems_support_wire_annotation() {
 		assertNotNull(mappedSystem.x);
@@ -200,9 +199,9 @@ public class WireTest {
 	}
 
 	private static class SomeThing {
-		@Wire(name="hupp") private String helloN1; 
+		@Wire(name="hupp", failOnNull=false) private String helloN1;
 		@Wire private String hello;
-		@Wire(name="blergh") private String helloN2; 
+		@Wire(name="blergh", failOnNull=false) private String helloN2;
 		
 		private TagManager tagManager;
 	}
